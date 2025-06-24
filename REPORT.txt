@@ -1,0 +1,119 @@
+# Internship Tasks Report
+
+## Task 1: Iris Dataset Analysis
+
+### Objective:
+
+To explore and visualize the Iris flower dataset using Python libraries such as pandas, seaborn, and matplotlib.
+
+### Dataset:
+
+* Built-in dataset: `seaborn.load_dataset('iris')`
+* Shape: (150, 5)
+* Features: `sepal_length`, `sepal_width`, `petal_length`, `petal_width`, `species`
+
+### Analysis & Visualizations:
+
+1. **Dataset Info**:
+
+   * Used `df.info()` and `df.describe()` to inspect structure and summary statistics.
+
+2. **Scatter Plot**:
+
+   * Visualized `sepal_length` vs `petal_length` for different species using `seaborn.scatterplot()`.
+   * Color-coded by species for visual separation.
+
+3. **Histograms**:
+
+   * One histogram per feature to show frequency distribution.
+   * Used matplotlib with green bars and black edges.
+
+4. **Box Plots**:
+
+   * Visualized feature spread and outliers using `seaborn.boxplot()`.
+
+---
+
+## Task 2: Stock Price Prediction using Random Forest
+
+### Objective:
+
+To predict the next day's closing price of Apple Inc. (AAPL) stock using Random Forest Regression.
+
+### Dataset:
+
+* Source: `yfinance` (Yahoo Finance)
+* Timeframe: Dec 1, 2024 - Mar 1, 2025
+* Features: `Open`, `High`, `Low`, `Volume`
+* Target: `next_close` (next day's `Close`)
+
+### Steps:
+
+1. **Data Cleaning**:
+
+   * Dropped missing rows and unnecessary columns.
+   * Shifted `Close` column by -1 to make it a prediction target.
+
+2. **Model Training**:
+
+   * Used `RandomForestRegressor`.
+   * 80/20 train-test split.
+   * Evaluated using RMSE (Root Mean Squared Error).
+
+3. **Results**:
+
+   * RMSE printed to console.
+   * Visualized actual vs predicted close prices using matplotlib.
+
+---
+
+## Task 3: House Price Prediction using Gradient Boosting
+
+### Objective:
+
+To build a regression model for predicting house prices using advanced gradient boosting techniques.
+
+### Dataset:
+
+* Source: `House Price Prediction Dataset.csv`
+* Target: `Price` (log-transformed as `Log_Price`)
+* Features: `Area`, `Bedrooms`, `Bathrooms`, `YearBuilt`, and other engineered features
+
+### Data Preprocessing:
+
+1. **Outlier Removal**:
+
+   * Removed extreme values using 1st and 99th percentiles.
+
+2. **Feature Engineering**:
+
+   * Added: `Age`, `Price_per_sqft`, `Area_per_bedroom`
+   * Removed: `YearBuilt`
+   * One-hot encoded: `Location`, `Condition`, `Garage`
+
+3. **Log Transformation**:
+
+   * Applied log to target to handle skewed data.
+
+### Model:
+
+* Model: `GradientBoostingRegressor`
+* Hyperparameters tuned for learning rate, depth, samples, etc.
+* Evaluated using MAE, RMSE, and R^2.
+
+### Results:
+
+* MAE, RMSE, and R^2 Score printed to console.
+* Scatter plot of actual vs predicted prices.
+
+---
+
+### Summary:
+
+Each task involved applying data science techniques:
+
+* Task 1 focused on visualization and data understanding.
+* Task 2 applied machine learning (Random Forest) on time-series-like data.
+* Task 3 leveraged feature engineering and advanced modeling (Gradient Boosting) for accurate predictions.
+
+
